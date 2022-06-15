@@ -3,7 +3,7 @@
 
     <div v-for="a in this.sitter" :key="a.id_sitter">
 
-    <section class="pb-32 bg-emerald-50 heder_sitter">
+    <section class="pb-32 heder_sitter">
         <div>
             <NavBare/>
         </div>
@@ -16,12 +16,16 @@
         </div>
     </section>
 
+    <section>
+        <SitterPost/>
+    </section>
+
     </div>
 </template>
 
 <style scoped>
 .heder_sitter{
-    background: url("../assets/images/trace.png"), rgba(236, 255, 243, 0.778);
+    background: url("../assets/images/trace.png"), rgba(239, 251, 243, 0.778);
     background-size: cover ;
     background-position: center;
     border-bottom-left-radius: 10rem;
@@ -33,10 +37,12 @@
 <script>
 import axios from 'axios'
 import NavBare from '../components/NavBare.vue'
+import SitterPost from '../components/sitter/SitterPost.vue'
 export default {
     name: 'SitterProfile',
     components: {
-        NavBare
+        NavBare,
+        SitterPost
     },
     data() {
         return {
