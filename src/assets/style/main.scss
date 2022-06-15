@@ -1,0 +1,372 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css');
+
+$primary: #31326F;
+$secondary: #FFC93C;
+$background: #FAFFF9;
+$background2: #DBF6E9;
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+    }
+.paragraphe{
+  font-size: 18px;
+  font-weight: 300;
+  // line-height: 0.9;
+
+}
+
+
+h1{
+    font-size: 64px;
+    font-weight: 600 ;
+    color: #31326F;
+}
+.button{
+    color: white;
+    background: #FFC93C;
+    width: 179px;
+    height: 52px;
+    border-radius: 15px;
+}
+
+h2{
+    color: #31326F;
+    font-size: 48px;
+    font-weight: 600;
+}
+h3{
+  color: $primary;
+  font-size: 58px;
+  font-weight: 600;
+}
+.p{
+  text-align: left;
+  font-size: 14px;
+  font-weight: 300;
+  color: #31326F;
+}
+
+
+.header{
+    background-color: $background;
+    border-radius: 62px;    
+    box-shadow: 0px 9px 30px 2px #87868626;
+    .header_items{
+      margin-left: 10vw;
+      padding-bottom: 5vw;
+      gap: 3vw;
+      display: flex;
+      // flex-wrap: wrap;
+    .left_item{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        p{
+            text-align: left;
+            font-size: 14px;
+            font-weight: 300;
+            color: #31326F;
+        }
+        button{
+          color: white;
+          background: #FFC93C;
+          width: 337px;
+          height: 58px;
+          border-radius: 15px;
+          margin-top: 3vw;
+      }
+    }      
+    }
+
+}
+
+main{
+  .services{
+    p{
+      @extend .paragraphe
+    }
+  }
+  .services_items{
+
+    align-items: center;
+    img{
+      background: #DBF6E9;
+      padding: 0.5vw;
+      border-radius: 90px ;
+    }
+    span{
+      display: flex;
+      gap: 2vw;
+      .services_text{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+            h4{
+        font-size: 18px;
+        font-weight: 600;
+        color: $primary;
+      }
+      p{
+        font-size: 18px;
+        font-weight: 300;
+        width: 20vw;
+        text-align: left;
+      }  
+      }
+
+    }
+  }
+}
+
+.folowers{
+  button{
+    @extend .button
+  }
+  .folowers_image{
+    img{
+      position: relative;
+    }
+  }
+}
+
+.feedback{
+  p{
+    @extend .paragraphe
+  }
+  .feedback_form{
+    border: solid 1px #b2b3da5f solid ;
+    box-shadow: 0px 6px 13px 0px #e5e5e5;
+    margin: 7vw;
+    width: 20rem;
+    height: 55%;
+    padding: 1vw;
+    .star{
+      font-size: 2rem;
+      color: #FFC93C;
+    }
+    p{
+      margin-left: 1vw;
+      text-align: left;
+    }
+
+    .flex{
+      padding-left: 1vw;
+      border-top: 1px #b2b3da5f solid ;
+      padding-top: 1vw;
+    h5{
+      font-weight: bold;
+    }
+    img{
+      border-radius: 150px;
+      width: 4vw;
+      object-fit: contain ;
+    }
+}
+  }
+
+}
+.treatPet{
+
+  p{
+    @extend .paragraphe
+  }
+  .treatPet_flex{
+    display: flex;
+    align-content: stretch;
+    align-items: center;
+  }
+  button{
+    @extend .button
+  }
+}
+
+.petSpeak{
+  
+  p{
+    text-align: left;
+    font-size: 18px;
+    font-weight: 300;
+    color: #31326F;
+  }
+}
+.questions{
+  @extend .petSpeak
+}
+
+
+
+
+
+//FQA Form
+$bg: #fff;
+$text: #7288a2;
+$gray: #4d5974;
+$lightgray: #e5e5e5;
+$blue: #03b5d2;
+
+* {
+  box-sizing: border-box;
+  &::before, &::after {
+    box-sizing: border-box;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Hind', sans-serif;
+  background: $bg;
+  color: $gray;
+  
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 4rem;
+  width: 48rem;
+}
+
+.accordion {
+  .accordion-item {
+    border-bottom: 1px solid $lightgray;
+    button[aria-expanded='true'] {
+      border-bottom: 1px solid $blue;
+    }
+  }
+  button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1em 0;
+    color: $text;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    &:hover, &:focus {
+      cursor: pointer;
+      color: $blue;
+      &::after {
+        cursor: pointer;
+        color: $blue;
+        border: 1px solid $blue;
+      }
+    }
+    .accordion-title {
+      padding: 1em 1.5em 1em 0;
+    }
+    .icon {
+      display: inline-block;
+      position: absolute;
+      top: 18px;
+      right: 0;
+      width: 22px;
+      height: 22px;
+      border: 1px solid;
+      border-radius: 22px;
+      &::before {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 9px;
+        left: 5px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      &::after {
+        display: block;
+        position: absolute;
+        content: '';
+        top: 5px;
+        left: 9px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+    }
+  }
+  button[aria-expanded='true'] {
+    color: $blue;
+    .icon {
+      &::after {
+        width: 0;
+      }
+    }
+    + .accordion-content {
+      opacity: 1;
+      max-height: 9em;
+      transition: all 200ms linear;
+      will-change: opacity, max-height;
+    }
+  }
+  .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 200ms linear, max-height 200ms linear;
+    will-change: opacity, max-height;
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      margin: 2em 0;
+    }
+  }
+}
+
+footer{
+  background: #A6CFBB;
+  color: white;
+  .footer_titele{
+    padding-bottom: 6vw;
+    margin-bottom: 3vw;
+    border-bottom: solid 1px $primary;
+      h4{
+    font-weight: 300;
+  }
+  button{
+    @extend .button
+  }
+  }
+
+  .footer_main{
+    padding: 0 7vw 6vw 7vw;
+    border-bottom: solid 1px $primary;
+    h5{
+    font-size: 22px;
+    text-align: left;
+    margin-bottom: 1vw;
+    }
+    p{
+      font-size: 18px;
+      font-weight: lighter;
+    }
+    li{
+      margin-bottom: 0.8vw;
+      text-align: left;
+    }
+  }
+  .foote_bottom{
+    padding: 1vw ;
+    p{
+      font-weight: 300;
+      text-align: left;
+      font-weight: 12px;
+    }
+  }
+}
+
+.signing{
+  .dog{
+    height: 90vh;
+  }
+}
