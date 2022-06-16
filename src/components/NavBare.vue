@@ -35,7 +35,7 @@
                 </routerLink>
                 
                 <router-link to="/post" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
-                    <span class="block">Posts</span>
+                    <span class="block">Postes</span>
                     <span class="absolute bottom-0 left-0 inline-block w-full h-1 mt-0.5 overflow-hidden rounded-full">
                         <span x-show="hover" class="absolute inset-0 inline-block w-full h-full transform bg-lime-600" x-transition:enter="transition origin-center ease-out duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out origin-center duration-200" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0" style="display: none;"></span>
                     </span>
@@ -81,7 +81,6 @@
 .active span{
     background-color: #ffc107;
 }
-
 </style>
 
 <script>

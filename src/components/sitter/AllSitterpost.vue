@@ -8,17 +8,32 @@
     <div class="p-4">
       <small class="text-xs text-blue-400">{{i.date_post}}</small>
       <h1 class="pb-2 text-2xl font-medium text-slate-600"></h1>
-      <p class="text-sm font-light leading-6 tracking-tight text-slate-400">{{i.discription}}</p>
+      <p class="text-2xl font-light leading-6 tracking-tight text-slate-400">{{i.discription}}</p>
+      <img @click="deletepost()" src="../../assets/icones/deleteSiter.png" alt="">
     </div>
   </div>
 
 </template>
 
 <script>
+    import axios from 'axios'
 
 export default{
     name: 'SitterPoste',
     props: ['i'],
+    
+    methods:{
+        deletepost(){
+            const formData = new FormData();
+            formData.append('id_post', this.i.id_post);
+            axios.post('http://localhost/bestFriendB/MVC/Sitterpost/deletePost', formData)
+            .then(response => {
+                console.log(response.data);
+                window.location.reload()
+            })
+            
+        }
+    }
 }
 
 </script>

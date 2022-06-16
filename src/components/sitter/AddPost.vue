@@ -8,7 +8,8 @@
     </label>
     <div class="w-full mx-22">
         <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your Descriotion</label>
-        <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-700 bg-gray-50 rounded-lg border border-gray-100 " placeholder="Write here..."></textarea>
+        <textarea id="message" rows="4" v-model="discription"
+        class="block p-2.5 w-full text-sm text-gray-700 bg-gray-50 rounded-lg border border-gray-100 " placeholder="Write here..."></textarea>
     </div>
     <button class="w-24 p-2 text-white bg-indigo-900 rounded-lg hover:bg-indigo-800" name="submit" type="submit">Send</button>
     </div>

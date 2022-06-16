@@ -1,9 +1,8 @@
 <template>
 
-    <PostNav/>
-    <NavBare/>
-<main class="flex m-16 justify-evenly my-36 post_pages ">
-    
+    <PostNav v-if="isLogIn=true"/>
+            <!-- <NavBare v-else/> -->
+        <main class="flex m-16 justify-evenly my-36 post_pages ">
     <section class="">
         
     </section>
@@ -30,7 +29,7 @@
 
 <script>
 import PostNav from '../components/PostNav.vue';
-import NavBare from '../components/NavBare.vue';
+// import NavBare from '../components/NavBare.vue';
 import ProfiCard from '../components/pages_pages/ProfilCard.vue';
 import NewPost from '../components/pages_pages/NewPost.vue';
 import AllPostes from '../components/pages_pages/AllPostes.vue';
@@ -40,7 +39,7 @@ export default {
     components: 
     {
         PostNav,
-        NavBare,
+        // NavBare,
         ProfiCard,
         NewPost,
         AllPostes
