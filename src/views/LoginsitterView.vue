@@ -57,9 +57,9 @@ methods :{
                 axios.post('http://localhost/bestFriendB/MVC/Sitter/login', formData)
                 .then(response=>
                 {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.data = response.data;
-                    console.log(this.data);
+                    // console.log(this.data);
                     if(response.data.length > 0){
                         // localStorage.setItem('ps_profile', this.ps_profile);
                         localStorage.setItem('token', this.data[0].id_sitter);

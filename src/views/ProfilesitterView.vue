@@ -16,37 +16,35 @@
         </div>
     </section>
 
-    <section>
-        <SitterPost/>
+    <section class="">
+        <AddPost/>
     </section>
+
+    <section>
+        <SitterPoste v-for="i in this.potes" :key="i.id" :i="i">
+        </SitterPoste>
+    </section>
+
 
     </div>
 </template>
 
-<style scoped>
-.heder_sitter{
-    background: url("../assets/images/trace.png"), rgba(239, 251, 243, 0.778);
-    background-size: cover ;
-    background-position: center;
-    border-bottom-left-radius: 10rem;
-    border-bottom-right-radius: 10rem;
-}
-
-</style>
-
 <script>
 import axios from 'axios'
 import NavBare from '../components/NavBare.vue'
-import SitterPost from '../components/sitter/SitterPost.vue'
+import AddPost from '../components/sitter/AddPost.vue'
+import SitterPoste from '../components/sitter/AllSitterpost.vue'
 export default {
     name: 'SitterProfile',
     components: {
         NavBare,
-        SitterPost
+        AddPost,
+        SitterPoste
     },
     data() {
         return {
             sitter: [],
+            potes: [],
         }
     },
             mounted() {
@@ -58,8 +56,30 @@ export default {
                 console.log(this.sitter);
             })
         },
+            created(){
+                let id_sit = localStorage.getItem('token');
+                console.log(id_sit)
+                const formData = new FormData();
+                formData.append('id_sit', id_sit);
+                axios.post('http://localhost/bestFriendB/MVC/Sitterpost/getAllPost', formData)
+                .then(res=>{
+                    this.potes = res.data;
+                    console.log(this.potes);
+                })
+        }
 
 
 }
 
 </script>
+
+<style scoped>
+.heder_sitter{
+    background: url("../assets/images/trace.png"), rgba(239, 251, 243, 0.778);
+    background-size: cover ;
+    background-position: center;
+    border-bottom-left-radius: 20rem;
+    border-bottom-right-radius: 20rem;
+}
+
+</style>

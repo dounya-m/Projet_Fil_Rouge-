@@ -41,7 +41,6 @@ import SinglePost from './singlePostes/SinglePost.vue';
                 
         },
         methods:{
-       
             getAll(){
                     axios.get('http://localhost/bestFriendB/MVC/Post/geAlltPosts')
                     .then(response => {

@@ -60,9 +60,14 @@ const routes = [
     component: ()=>import('../views/LoginsitterView.vue')
   },
   {
-    path : '/siiterprofile',
+    path: '/siiterprofile',
     name: 'SitterProfile',
     component: ()=>import('../views/ProfilesitterView.vue')
+  },
+  {
+    path: '/admin',
+    name: 'AdminView',
+    component: ()=>import('../views/AdminView.vue')
   }
 ]
 
