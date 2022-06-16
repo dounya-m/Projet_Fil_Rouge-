@@ -68,6 +68,11 @@ const routes = [
     path: '/admin',
     name: 'AdminView',
     component: ()=>import('../views/AdminView.vue')
+  },
+  {
+    path: '/siterpro/:id_sitter',
+    name: 'SitterPro',
+    component: ()=>import('../views/SitterprofileView.vue')
   }
 ]
 

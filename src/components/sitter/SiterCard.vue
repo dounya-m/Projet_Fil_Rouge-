@@ -17,7 +17,7 @@
                 {{a.description}}
             </p>
             <div class="flex items-center justify-center p-2 my-4 text-white bg-green-300 rounded-md w-28">
-                <a href="https://wa.me/+212{{a.phone}}">Show Profile</a>
+                <a :href="'/siterpro/'+a.id_sitter">Show Profile</a>
             </div>
         </div>
     </div>
@@ -35,5 +35,14 @@
 export default{
     name: 'SiterCard',
     props: ['a'],
+        data(){
+    return{
+        
+        };
+    },
+    methods:{
+    
+      
+    },
 }
 </script>
