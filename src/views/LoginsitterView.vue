@@ -7,9 +7,13 @@
             <!-- <div>
                 <h1>Welcome to your space</h1>
             </div> -->
-    <form v-on:submit.prevent="login()">
-    <div class="flex items-center justify-center min-h-screen ">
+    <form class="" v-on:submit.prevent="login()">
+    <div class="flex flex-col items-center justify-center min-h-screen gap-3 ">
 
+        <div class="flex gap-3">
+            <routerLink to="/allsitter" class="p-2 text-white rounded-lg w-36 bg-emerald-300 hover:bg-emerald-500"> see all sitter</routerLink>
+            <routerLink to="/form" class="p-2 border-2 rounded-lg w-36 text-emerald-300 border-emerald-300 hover:bg-emerald-50"> Sign In </routerLink>
+        </div>
 
 	<div class="z-20 px-12 py-12 shadow-xl rounded-2xl login_flou">
 		<div>

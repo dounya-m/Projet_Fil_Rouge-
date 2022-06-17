@@ -73,6 +73,11 @@ const routes = [
     path: '/siterpro/:id_sitter',
     name: 'SitterPro',
     component: ()=>import('../views/SitterprofileView.vue')
+  },
+  {
+    path: '/adminlogin',
+    name: 'LoginAdmin',
+    component: ()=>import('../views/AdminloginView.vue')
   }
 ]
 

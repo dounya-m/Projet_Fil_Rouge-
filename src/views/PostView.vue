@@ -11,7 +11,7 @@
 <!-- main where we showe the posts -->
 
     <section class="flex flex-col items-center justify-center ">
-        <NewPost v-if="isLoggedIn"/>
+        <NewPost/>
 
         <AllPostes/>
     </section>

@@ -13,9 +13,21 @@
             <p class="font-normal">{{i.phone}}</p>
             <p class="font-normal">{{i.adress}}</p>
             <p class="font-normal">{{i.description}}</p>
-            
-            <p class="font-semibold text-gray-500"></p>
         </div>
+
+        <div  v-if="jaime == 0" >
+        <button @click.stop.prevent="like()">
+            <img src="../../assets/icones/likesitter.png" alt="">
+        </button>
+        </div>
+        
+        <div v-else>
+        <button  @click.stop.prevent="deleteLike()">
+            <img src="../../assets/icones/ressitterLike.png" alt="">
+        </button>
+        </div>
+
+            <p class="font-medium ">{{allLikes}}</p>
         </div>
     </section>
 
@@ -29,7 +41,8 @@
         <h1 class="pb-2 text-2xl font-medium text-slate-600"></h1>
         <p class="text-xl font-light leading-6 tracking-tight text-slate-400">{{e.discription}}</p>
         </div>
-        <img v-bind:src="'../sitterPost/' + e.image" class="object-cover object-center w-full aspect-video rounded-b-2xl"/>
+        <img  v-bind:src="'../sitterPost/' + e.image" class="object-cover object-center w-full aspect-video rounded-b-2xl"/>
+
     </div>
 </section>
     
@@ -50,27 +63,78 @@ export default{
         return{
             a: [],
             b: [],
+            jaime : null,
+            allLikes : null,
         }
     },
-    beforeMount(){
+    beforeCreate(){
         const formData = new FormData();
         formData.append('id_sitter', this.$route.params.id_sitter);
         axios.post('http://localhost/bestFriendB/MVC/Sitter/profile', formData)
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             this.b = response.data;
         })
     },
 
-    mounted(){
+    created(){
         // this.$route.params.id_sitter
         const formData = new FormData();
         formData.append('id_sit', this.$route.params.id_sitter);
         axios.post('http://localhost/bestFriendB/MVC/Sitterpost/sitterPostes', formData)
         .then(response => {
-            console.log(response.data);
+            // console.log(response.data);
             this.a = response.data;
         })
+    },
+        mounted(){
+            const data = new FormData();
+            data.append('id_user', localStorage.getItem('token'));
+            data.append('id_profile', this.$route.params.id_sitter);
+            axios.post('http://localhost/bestFriendB/MVC/Siiterlike/checklike', data)
+            .then(response => {
+                // console.log(response.data);
+                this.jaime = response.data;
+            })
+        },
+        updated(){
+            const data = new FormData();
+            // data.append('user_id', this.user_id);
+            data.append('id_profile', this.$route.params.id_sitter);
+            axios.post('http://localhost/bestFriendB/MVC/Siiterlike/couontLike', data)
+            .then(response => {
+                console.log(response.data);
+                this.allLikes = response.data;
+                
+            })
+        },
+    methods:{
+            like(){
+                const data = new FormData();
+                data.append('id_user', localStorage.getItem('token'));
+                data.append('id_profile', this.$route.params.id_sitter);
+                axios.post('http://localhost/bestFriendB/MVC/Siiterlike/addlike', data)
+                .then(response => {
+                    console.log(response.data);
+                    // window.location.reload();
+                    this.jaime += 1;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+                
+            },
+            deleteLike(){
+                const data = new FormData();
+                data.append('id_user', localStorage.getItem('token'));
+                data.append('id_profile', this.$route.params.id_sitter);
+                axios.post('http://localhost/bestFriendB/MVC/Siiterlike/deleteLike', data)
+                .then(response => {
+                    console.log(response.data);
+                    // window.location.reload();
+                    this.jaime -= 1;
+                })
+            },
     }
 }
 </script>

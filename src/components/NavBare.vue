@@ -26,8 +26,14 @@
                         <span x-show="hover" class="absolute inset-0 inline-block w-full h-full transform bg-lime-600" x-transition:enter="transition origin-center ease-out duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out origin-center duration-200" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0" style="display: none;"></span>
                     </span>
                 </routerLink>
+                <!-- <routerLink v-if="isLogin" to="/allsitter" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
+                    <span class="block">Sitter</span>
+                    <span class="absolute bottom-0 left-0 inline-block w-full h-1 mt-0.5 overflow-hidden rounded-full">
+                        <span x-show="hover" class="absolute inset-0 inline-block w-full h-full transform bg-lime-600" x-transition:enter="transition origin-center ease-out duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out origin-center duration-200" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0" style="display: none;"></span>
+                    </span>
+                </routerLink> -->
 
-                <routerLink v-if="isLoggedIn" to="/siiterprofile" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
+                <routerLink v-if="isLogin" to="/siiterprofile" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
                     <span class="block">My profile</span>
                     <span class="absolute bottom-0 left-0 inline-block w-full h-1 mt-0.5 overflow-hidden rounded-full">
                         <span x-show="hover" class="absolute inset-0 inline-block w-full h-full transform bg-lime-600" x-transition:enter="transition origin-center ease-out duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out origin-center duration-200" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0" style="display: none;"></span>
@@ -48,7 +54,7 @@
                     </span>
                 </a>
             </div>
-            <div v-if="isLoggedIn" class="relative w-full px-4 space-x-5 text-lg font-medium leading-10 md:space-x-3 md:text-base lg:text-lg lg:space-x-12 sm:w-auto">
+            <div v-if="isLogin" class="relative w-full px-4 space-x-5 text-lg font-medium leading-10 md:space-x-3 md:text-base lg:text-lg lg:space-x-12 sm:w-auto">
                 
                 <!-- <router-link to="/siiterprofile" 
                 class="inline-flex items-center justify-center px-3 py-2 text-sm font-normal text-white uppercase whitespace-no-wrap bg-yellow-300 rounded-md shadow-sm md:text-sm lg:text-base hover:bg-yellow-400">
@@ -89,12 +95,12 @@
         name: 'NavBare',
         data(){
             return{
-                isLoggedIn: localStorage.getItem('token') ?true : false,
+                isLogin: localStorage.getItem('token') ?true : false,
                 
             }
         },
         beforecreated() {
-        this.isLoggedIn = localStorage.getItem('token') ? true : false
+        this.isLogin = localStorage.getItem('token') ? true : false
         },
         methods:{
             logout(){

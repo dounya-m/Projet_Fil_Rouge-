@@ -14,7 +14,9 @@
             <routerLink to="/post">
                 <img class="w-10 p-2 rounded-full bg-violet-100 " src="../assets/icones/home.png" alt="">
             </routerLink>
-            <img class="w-10 p-2 rounded-full bg-violet-100 " src="../assets/icones/doctor.png" alt="">
+            <router-link to="/allsitter">
+                <img class="w-10 p-2 rounded-full bg-violet-100 " src="../assets/icones/doctor.png" alt="">
+            </router-link>
         </div>
         <div class="">
                 <input type="text" class="h-10 p-2 rounded-md w-96 bg-slate-50 placeholder-emerald-800 " placeholder="Search....">
