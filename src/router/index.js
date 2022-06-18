@@ -65,25 +65,43 @@ const routes = [
     component: ()=>import('../views/ProfilesitterView.vue')
   },
   {
-    path: '/admin',
-    name: 'AdminView',
-    component: ()=>import('../views/AdminView.vue')
-  },
-  {
     path: '/siterpro/:id_sitter',
     name: 'SitterPro',
     component: ()=>import('../views/SitterprofileView.vue')
   },
   {
+    path: '/admin',
+    name: 'AdminView',
+    component: ()=>import('../views/AdminView.vue')
+  },
+  {
     path: '/adminlogin',
     name: 'LoginAdmin',
     component: ()=>import('../views/AdminloginView.vue')
+  },
+  {
+    path: '/users',
+    name: 'UsersView',
+    component: ()=>import('../views/UsersView.vue')
+  },
+  {
+    path: '/Sittersadmin',
+    name: 'SittersadminView',
+    component: ()=>import('../views/SittersadminView.vue')
+  },
+  {
+    path: '/blog',
+    name: 'BlogView',
+    component: ()=>import('../views/BlogView.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  linkActiveClass: "active",
+  linkExactActiveClass: "active"
 })
+
 
 export default router
