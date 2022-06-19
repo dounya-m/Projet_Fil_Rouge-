@@ -11,10 +11,11 @@ import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 
+
 /* add icons to the library */
 library.add(faUserSecret)
 
-
+// createApp( { /* options */ } ).use( CKEditor ).mount( /* DOM element */ );
 // new Vue({
 //   el: '#app',
 //   components: { App },

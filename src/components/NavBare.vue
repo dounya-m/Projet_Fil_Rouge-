@@ -83,9 +83,10 @@
 </section>
 </template>
 
-<style>
+<style scoped>
+
 .active span{
-    background-color: #ffc107;
+    color: rgb(102, 197, 6);
 }
 </style>
 

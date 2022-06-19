@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col h-screen gap-24 pt-4 bg-blue-50 sidebar">
+    <div class="flex flex-col h-screen gap-24 pt-4 sidebar">
         <section>
         <div class="p-3">
             <img class="w-5/12" src="../../assets/images/bestFriendDashobord.png">
@@ -7,47 +7,50 @@
     </section>
 
     <section class="flex flex-col items-start justify-start gap-10 text-lg font-semibold text-blue-900">
-        <div class="flex items-center w-full gap-2 px-6 py-4 text-left hover:bg-slate-100 hover:text-blue-700">
-            <img class="w-8" src="../../assets/icones/dashboard.png" alt="">
-            <router-link to="/admin" active-class="active">
+        
+    <router-link class="flex items-center w-full gap-2 px-6 py-4" to="/admin" active-class="active">
+        <img class="w-8" src="../../assets/icones/dashboard.png" alt="">
+        <span class="text-left text-slate-500 hover:text-slate-700">
                 Dashboard
-            </router-link>
-        </div>
+        </span>
+        </router-link>
 
-        <div class="flex items-center w-full gap-2 px-6 py-4 text-left hover:bg-slate-100 hover:text-blue-700">
+    <router-link class="flex items-center w-full gap-2 px-6 " to="/users" active-class="active">
             <img class="w-8" src="../../assets/icones/users.png" alt="">
-            <router-link to="/users" exact-active-class="exact-active">
-                Users
-            </router-link>
-        </div>
+            <span class="flex items-center w-full gap-2 px-6 py-4 text-left hover:text-blue-400">
+                    Users
+            </span>
+        </router-link>
         
-        <div class="flex items-center w-full gap-2 px-6 py-4 text-left hover:bg-slate-100 hover:text-blue-700">
+        <router-link to="/Sittersadmin" class="flex items-center w-full gap-2 px-6 " active-class="active"> 
             <img class="w-8" src="../../assets/icones/sitters.png" alt="">
-            <router-link to="/Sittersadmin">
-                Sitters
-            </router-link>
-        </div>
+            <span class="flex items-center w-full gap-2 px-6 py-4 text-left text-green-500 hover:text-green-400">
+                    Sitters
+            </span>
+        </router-link>
         
-        <div class="flex items-center w-full gap-2 px-6 py-4 text-left hover:bg-slate-100 hover:text-blue-700">
+        <router-link to="/allpostadmin" class="flex items-center w-full gap-2 px-6 " active-class="active">
             <img class="w-8" src="../../assets/icones/postes.png" alt="">
-            <router-link to="">
-                All Postes
-            </router-link>
-        </div>
+            <span class="flex items-center w-full gap-2 px-6 py-4 text-left text-yellow-500 hover:text-yellow-400">
+                    All Postes
+            </span>
+        </router-link>
         
-        <div class="flex items-center w-full gap-2 px-6 py-4 text-left hover:bg-slate-100 hover:text-blue-700">
+        <!-- <router-link to="#" class="flex items-center w-full gap-2 px-6 " active-class="active" >
             <img class="w-8" src="../../assets/icones/lastPost.png" alt="">
-            <router-link to="">
+            <span class="flex items-center w-full gap-2 px-6 py-4 text-left text-pink-500 hover:text-pink-400">
                 Last Postes
-            </router-link>
-        </div>
+            </span>
+        </router-link> -->
 
-        <div class="flex items-center w-full gap-2 px-6 py-4 text-left hover:bg-slate-100 hover:text-blue-700">
+
+
+        <router-link to="/blog" class="flex items-center w-full gap-2 px-6 " active-class="active">
             <img class="w-8" src="../../assets/icones/blog.png" alt="">
-            <router-link to="/blog">
-                Blog
-            </router-link>
-        </div>
+            <span class="flex items-center w-full gap-2 px-6 py-4 text-left text-purple-600 hover:text-violet-500">
+                    Blog
+            </span>
+        </router-link> 
         
     </section>
     </div>
@@ -59,8 +62,16 @@ export default{
 }
 
 </script>
-<style>
+<style scoped>
+
+.active {
+    background: rgba(235, 248, 255, 0.76);
+    box-shadow: -11px 9px 16px 0px #ddeaff8a;
+    border-top-right-radius:3rem ;
+    border-bottom-left-radius:3rem ;
+}
 .sidebar{
     width: 16vw;
+    background: rgb(244, 250, 255);
 }
 </style>

@@ -8,6 +8,9 @@
             <div>
                 <StatisticsTop/>
             </div>
+            <div>
+                <LastPostes/>
+            </div>
         </section>
         
     </div>
@@ -16,13 +19,15 @@
 
 <script>
 import SideBare from '../components/admin/SideBare.vue';
-import StatisticsTop from '../components/admin/dashboard/StatisticsTop.vue';
+import StatisticsTop from '/src/components/admin/dashboard/StatisticsTop.vue';
+import LastPostes from '../components/admin/dashboard/LastPostes.vue';
 
 export default{
     name: 'AdminView',
     components: {
         SideBare,
-        StatisticsTop
+        StatisticsTop,
+        LastPostes
     },
 }
 </script>
