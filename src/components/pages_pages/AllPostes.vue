@@ -1,8 +1,8 @@
 <template>
     <div class="w-full">
         <section class="flex justify-between mx-5 font-semibold my-7 categries_nav">
-            <router-link  @click="getAll()" class="p-2 roouterLink text-slate-400 hover:text-slate-500" to="/allpost" class-active="active">All Post</router-link>
-            <router-link  @click="getLast()" class="p-2 roouterLink text-slate-400 hover:text-slate-500" to="/last" class-active="active">Last Post</router-link>
+            <router-link  @click="getAll()" class="p-2 all roouterLink text-slate-400 hover:text-slate-500" to="" class-active="active">All Post</router-link>
+            <router-link  @click="getLast()" class="p-2 roouterLink text-slate-400 hover:text-slate-500" to="" class-active="active">Last Post</router-link>
             <router-link  @click="getDog()" class="p-2 roouterLink text-slate-400 hover:text-slate-500" to="" class-active="active">Dog</router-link>
             <router-link  @click="getCat()" class="p-2 roouterLink text-slate-400 hover:text-slate-500" to="" class-active="active">Cat</router-link>
             <router-link  @click="getOthers  ()" class="p-2 roouterLink text-slate-400 hover:text-slate-500" to="" class-active="active">Others</router-link>

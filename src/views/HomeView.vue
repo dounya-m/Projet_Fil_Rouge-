@@ -98,10 +98,11 @@
         </span>
       </section>
 
-      <section class="feedback">
+      <section class="feedback" >
         <h3>What Our Happy User's Says </h3>
         <p>comments from our large animal-loving community and their feedback</p>
-          <div  class="feedback_form" >
+        <div class="flex flex-wrap gap-2 justify-evenly">
+          <div  class="feedback_form" v-for="item in 4" :key="item" >
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
           <button class="star">&#9734;</button>
@@ -118,6 +119,7 @@
               <p>Casablanca</p>
             </div>
           </div>
+        </div>
         </div>
       </section>
 
