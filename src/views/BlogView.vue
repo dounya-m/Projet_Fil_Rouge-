@@ -11,7 +11,7 @@
                 <option value="" selected>Select a category</option>
                 <option value="dog">Dog </option>
                 <option value="cat">Cat</option>
-                <option value="ohers">Others</option>
+                <option value="others">Others</option>
             </select>
             <label class="flex flex-col text-left" for="">
                 Your Title
@@ -60,8 +60,9 @@ export default{
             data.append('image',this.image);
             axios.post('http://localhost/bestFriendB/MVC/Blog/addBlog', data)
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 this.blog = response.data;
+                window.location.reload();
             })
         }
     }

@@ -1,7 +1,9 @@
 <template>
 
-    <PostNav v-if="isLogIn=true"/>
-            <!-- <NavBare v-else/> -->
+    <PostNav/>
+
+        <!-- <NavBare/> -->
+
         <main class="flex m-16 justify-evenly my-36 post_pages ">
     <section class="">
         

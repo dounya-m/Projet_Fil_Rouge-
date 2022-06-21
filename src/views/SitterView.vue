@@ -28,7 +28,16 @@
 
 </template>
 
-<style>
+<style scoped>
+h1{
+    width: 25rem;
+}
+p{
+    width: 27rem;
+}
+h3{
+    width: 27rem;
+}
 .header_sitter{
     background: url("../assets/images/header.jpg");
     width: 100%;
@@ -40,7 +49,7 @@
 }
 .background_heaer{
     height: 100vh;
-    padding: 13rem;
+    padding: 22rem;
     -moz-border-radius-bottomleft: 25rem 75rem;
     border-bottom-left-radius: 25rem 50rem;
     box-shadow: -12px 1px 20px 0px #0000001c;

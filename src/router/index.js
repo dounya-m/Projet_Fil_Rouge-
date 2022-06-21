@@ -99,6 +99,11 @@ const routes = [
     name: 'PostadminView',
     component: ()=>import('../views/AllpostadminView.vue')
   },
+  {
+    path: '/bloguser',
+    name : 'BlooguserView',
+    component: ()=>import('../views/BlooguserView.vue')
+  }
 ]
 
 const router = createRouter({

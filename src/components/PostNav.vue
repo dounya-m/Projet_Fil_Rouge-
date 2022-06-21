@@ -1,4 +1,4 @@
-<template>
+<template v-if="isLoggedIn" >
 
 <header class="flex items-center justify-end object-top " v-for="a in this.post" :key="a.id">
 

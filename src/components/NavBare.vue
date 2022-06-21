@@ -47,19 +47,22 @@
                     </span>
                 </router-link>
                 
-                <a href="#_" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
-                    <span class="block">About</span>
+                <router-link to="/bloguser" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
+                    <span class="block">blog</span>
                     <span class="absolute bottom-0 left-0 inline-block w-full h-1 mt-0.5 overflow-hidden rounded-full">
                         <span x-show="hover" class="absolute inset-0 inline-block w-full h-full transform bg-lime-600" x-transition:enter="transition origin-center ease-out duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out origin-center duration-200" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0" style="display: none;"></span>
                     </span>
-                </a>
-            </div>
-            <div v-if="isLogin" class="relative w-full px-4 space-x-5 text-lg font-medium leading-10 md:space-x-3 md:text-base lg:text-lg lg:space-x-12 sm:w-auto">
+                </router-link>
                 
-                <!-- <router-link to="/siiterprofile" 
-                class="inline-flex items-center justify-center px-3 py-2 text-sm font-normal text-white uppercase whitespace-no-wrap bg-yellow-300 rounded-md shadow-sm md:text-sm lg:text-base hover:bg-yellow-400">
-                    My profile
-                </router-link> -->
+                <!-- <a href="bloguser" x-data="{ hover: false }" @mouseenter="hover = true" @mouseleave="hover = false" class="relative inline-block font-semibold text-center text-blue-900 no-underline bg-transparent cursor-pointer hover:text-lime-300 focus:no-underline">
+                    <span class="block">Blog</span>
+                    <span class="absolute bottom-0 left-0 inline-block w-full h-1 mt-0.5 overflow-hidden rounded-full">
+                        <span x-show="hover" class="absolute inset-0 inline-block w-full h-full transform bg-lime-600" x-transition:enter="transition origin-center ease-out duration-200" x-transition:enter-start="scale-0" x-transition:enter-end="scale-100" x-transition:leave="transition ease-out origin-center duration-200" x-transition:leave-start="scale-100" x-transition:leave-end="scale-0" style="display: none;"></span>
+                    </span>
+                </a> -->
+                
+            </div>
+                <div v-if="isLogin && isLoggedIn" class="relative w-full px-4 space-x-5 text-lg font-medium leading-10 md:space-x-3 md:text-base lg:text-lg lg:space-x-12 sm:w-auto">
                 
                 <router-link to="/" @click="logout()" 
                 class="inline-flex items-center justify-center px-3 py-2 text-sm font-normal text-yellow-300 uppercase whitespace-no-wrap border-2 border-yellow-300 rounded-md shadow-sm md:text-sm lg:text-base hover:bg-yellow-400 hover:text-white hover:border-yellow-400">
@@ -78,15 +81,16 @@
                     Sign up
                 </router-link>
             </div>
+            </div>
+                
         </div>
-    </div>
 </section>
 </template>
 
 <style scoped>
 
 .active span{
-    color: rgb(102, 197, 6);
+    color: rgb(112, 218, 5);
 }
 </style>
 
@@ -96,22 +100,24 @@
         name: 'NavBare',
         data(){
             return{
-                isLogin: localStorage.getItem('token') ?true : false,
+                isLoggedIn: localStorage.getItem('token') ?true : false,
+                isLogin: localStorage.getItem('id_sitter') ?true : false,
                 
             }
         },
         beforecreated() {
-        this.isLogin = localStorage.getItem('token') ? true : false
+        this.isLogin = localStorage.getItem('id_sitter') ? true : false
         },
         methods:{
             logout(){
-                localStorage.removeItem('token')
-                            console.log(typeof localStorage['token']);
-                            if(!localStorage['token']){
+                localStorage.removeItem('id_sitter')
+                            console.log(typeof localStorage['id_sitter']);
+                            if(!localStorage['id_sitter']){
                             this.ifLogin=false;
                 }
                 // console.log(this.ifLogin)
                 this.$router.push('/')
+                window.location.reload()
             },
         }
     }

@@ -66,7 +66,7 @@ methods :{
                     // console.log(this.data);
                     if(response.data.length > 0){
                         // localStorage.setItem('ps_profile', this.ps_profile);
-                        localStorage.setItem('token', this.data[0].id_sitter);
+                        localStorage.setItem('id_sitter', this.data[0].id_sitter);
                         this.$router.push('/siiterprofile');
                     }else{
                         this.data == false,

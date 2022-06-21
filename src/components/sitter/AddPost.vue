@@ -33,7 +33,7 @@ export default{
         },
         Add(){
         const formData = new FormData();
-        formData.append('id_sit', localStorage.getItem('token'));
+        formData.append('id_sit', localStorage.getItem('id_sitter'));
         formData.append('discription', this.discription);
         formData.append('image', this.image);
         axios.post('http://localhost/bestFriendB/MVC/Sitterpost/addPost', formData)

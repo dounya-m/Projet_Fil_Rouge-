@@ -103,6 +103,7 @@ import axios from 'axios';
 
         data(){
             return{
+                isLoggedIn: localStorage.getItem('token') ?true : false,
                 user_id: localStorage.getItem('token'),
                 jaime : null,
                 allLikes : null,

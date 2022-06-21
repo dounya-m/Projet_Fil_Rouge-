@@ -13,10 +13,10 @@
             <h1 class="mb-1 text-3xl font-bold text-center">{{a.nom}} {{a.prenom}}</h1>
             <p class="text-sm text-center text-gray-800">{{a.ville}}</p>
             <p class="text-sm text-center text-gray-800">{{a.adress}}</p>
-            <p class="pt-3 text-base font-normal text-center text-gray-600">
+            <p class="pt-3 text-base font-normal text-center text-gray-600 discription">
                 {{a.description}}
             </p>
-            <div class="flex items-center justify-center p-2 my-4 text-white bg-green-300 rounded-md w-28">
+            <div class="flex items-center justify-center p-2 my-4 text-white bg-green-300 rounded-md w-28 hover:bg-green-200">
                 <a :href="'/siterpro/'+a.id_sitter">Show Profile</a>
             </div>
         </div>
@@ -25,9 +25,12 @@
 </section>
 
 </template>
-<style>
+<style scoped>
+.discription{
+    height: 6rem;
+}
     .sitter_card{
-        width: 20%;
+        width: 20rem;
         height: 20rem ;
     }
 </style>

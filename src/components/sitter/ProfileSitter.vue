@@ -89,7 +89,7 @@ export default{
     },
         mounted(){
             const data = new FormData();
-            data.append('id_user', localStorage.getItem('token'));
+            data.append('id_user', localStorage.getItem('id_sitter'));
             data.append('id_profile', this.$route.params.id_sitter);
             axios.post('http://localhost/bestFriendB/MVC/Siiterlike/checklike', data)
             .then(response => {

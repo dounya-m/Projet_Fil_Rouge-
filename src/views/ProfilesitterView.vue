@@ -49,7 +49,7 @@ export default {
     },
             mounted() {
             const formData = new FormData();
-            formData.append('id_sitter', localStorage.getItem('token'));
+            formData.append('id_sitter', localStorage.getItem('id_sitter'));
             axios.post('http://localhost/bestFriendB/MVC/Sitter/profile', formData)
             .then(response => {
                 this.sitter = response.data;
@@ -57,7 +57,7 @@ export default {
             })
         },
             created(){
-                let id_sit = localStorage.getItem('token');
+                let id_sit = localStorage.getItem('id_sitter');
                 console.log(id_sit)
                 const formData = new FormData();
                 formData.append('id_sit', id_sit);
