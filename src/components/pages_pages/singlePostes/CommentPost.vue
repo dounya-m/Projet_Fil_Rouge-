@@ -1,8 +1,8 @@
 <template>
 
-<div class="flex flex-col items-start justify-center gap-6 p-6 rounded-2xl h-4/5 bg-slate-50 form">
+<div class="flex flex-col items-start justify-center gap-6 p-6 rounded-2xl bg-slate-50 form">
 
-    <div  class="comment_form">
+    <div  class="comment_form h-9/12">
             <form v-for="i in this.all" :key="i" :i="i">
         
         <section class="flex items-start mb-3 gap-7 ">
@@ -19,8 +19,8 @@
     </div>
 
     <section class="flex flex-wrap justify-center gap-2 inpute_comment">
-        <img class="w-16 rounded-full " v-bind:src="'../uploads/' + a.image" alt="">
-        <input class="p-2 border-b-2 bg-gray-50 input_com" type="text" name="comment" v-model="comment" placeholder="Creat Your comment here..." required>
+        <img class="object-cover w-12 h-12 rounded-full" v-bind:src="'../uploads/' + this.image" alt="">
+        <input class="p-1 border-b-2 bg-gray-50 input_com w-[20rem]" type="text" name="comment" v-model="comment" placeholder="Creat Your comment here..." required>
         <button @click.prevent="addComment(a.id_p)">send</button>
     </section>
     
@@ -37,7 +37,9 @@ export default{
         return{
             user_id : localStorage.getItem('token'),
             comment : '',
-            all: []
+            all: [],
+            image:  localStorage.getItem('image')
+
         }
     },
     methods:{

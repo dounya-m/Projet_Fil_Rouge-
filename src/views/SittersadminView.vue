@@ -1,10 +1,10 @@
 <template>
-<div class="flex">
-    <section>
+<div class="flex flex-row">
+    <section class="fixed z-30 h-full">
         <SideBare/>
     </section>
 
-    <section class="flex flex-wrap justify-center gap-8">
+    <section class="flex flex-wrap justify-center gap-8 pl-[20rem]">
         <SittersAdmin  v-for="sitter in this.sitters" :key="sitter" :sitter="sitter" />
     </section>
 </div>

@@ -1,7 +1,8 @@
 <template>
 <form class="flex flex-col items-center justify-center">
         <section class="absolute z-20 hidden" :id="'commentPost'+a.id_p">
-            <button @click="showComments(a.id_p)" class="w-10 h-10 p-2 mb-2 font-normal text-white border-2 border-white rounded-full">
+            <button  @click="showComments(a.id_p)" 
+            class="w-10 h-10 p-2 mb-2 font-normal text-gray-200 border-2 border-gray-200 rounded-full hover:text-red-600 hover:border-red-600">
                     X
             </button>
             <CommentPost :a="a"/>
@@ -45,29 +46,27 @@
     </div>
 
     <div class="flex element justify-evenly">
-        <div class="flex items-center gap-3 " v-if="jaime == 0" >
-            <button @click.stop.prevent="like(a.id_p)" class="p-2 border-2 border-white rounded-full ">
+        <div class="flex items-center gap-3 ">
+            <button v-if="jaime == 0" @click.stop.prevent="like(a.id_p)" class="p-2 border-2 border-white rounded-full ">
                 <img class="w-10 " src="../../../assets/icones/likes.png" alt="">
             </button>
-            <p class="font-medium text-white ">{{allLikes}}</p>
-        </div>
-        <div class="flex items-center gap-3 " v-else >
-            <button @click.stop.prevent="deleteLike(a.id_p)" class="p-2 border-2 border-red-500 rounded-full ">
+            <button v-else @click.stop.prevent="deleteLike(a.id_p)" class="p-2 border-2 border-red-500 rounded-full ">
                 <img class="w-10 " src="../../../assets/icones/likesRed.png" alt="">
             </button>
-            <p class="font-medium text-white ">{{allLikes}}</p>
+            <p class="font-medium text-white ">{{allLikes}} Like</p>
         </div>
+
         
         <div class="flex items-center gap-3">
             <button @click="showComments(a.id_p)" class="p-2 border-2 border-white rounded-full wx-10">
                 <img class="w-10 " src="../../../assets/icones/comment.svg" alt="">
             </button>
-            <p class="font-medium text-white ">{{allComments}}</p>
+            <p class="font-medium text-white ">{{allComments}} Comment</p>
         </div>
 
-        <button class="p-2 border-2 border-white rounded-full">
+        <!-- <button class="p-2 border-2 border-white rounded-full">
                 <img class="w-10 " src="../../../assets/icones/star.svg" alt="">
-        </button>
+        </button> -->
     </div>
 </section>
 

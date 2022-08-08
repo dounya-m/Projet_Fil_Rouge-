@@ -154,7 +154,7 @@ export default {
                     this.sitter = Response.data;  
                 {
                     if(Response.data == true){
-                    this.$router.push('/allsitter');
+                    this.$router.push('/loginsitter');
                     }else{
                     this.data == false,
                     alert('Please select file');

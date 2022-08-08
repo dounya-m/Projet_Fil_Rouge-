@@ -9,11 +9,9 @@
         </section>
     </div>
 
-
-
-
-
-<SinglePost v-for="a in this.post" :key="a.id" :a="a"/>
+<div>
+    <SinglePost v-for="a in this.post" :key="a.id" :a="a"/> 
+</div>
 
 </template>
 
@@ -37,7 +35,7 @@ import SinglePost from './singlePostes/SinglePost.vue';
         },
 
         mounted() {
-             this.getAll()
+            this.getAll()
                 
         },
         methods:{

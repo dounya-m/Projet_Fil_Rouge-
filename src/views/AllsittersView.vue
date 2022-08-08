@@ -4,10 +4,13 @@
         <NavBare/>
 
     </div>
-
+    <div>
+        <input type="recherche" placeholder="put your city here" v-model="this.search" 
+        class="w-2/12 p-2 border-b-2">
+    </div>
     <div class="flex flex-wrap justify-center gap-4 mx-10 mt-48">
 
-        <SiterCard v-for="a in this.card" :key="a.id" :a="a"/>
+        <SiterCard v-for="a in filterCard" :key="a.id" :a="a"/>
 
     </div>
 </template>
@@ -20,11 +23,13 @@ export default{
     name: 'AllsittersView',
     components:{
         NavBare,
-        SiterCard
+        SiterCard,
+       
     },
     data(){
         return{
-            card: []
+            card: [],
+            search : ''
         }
     },
     mounted(){
@@ -33,7 +38,15 @@ export default{
                 this.card = response.data;
                 console.log(this.card);
             })
-    }
+    },
+    computed:{
+    // function to filtre 
+    filterCard : function(){
+        return this.card.filter((car)=>{
+            return car.ville.match(this.search)
+        });
+    },
+}
 }
 
 </script>

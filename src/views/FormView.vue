@@ -21,6 +21,7 @@
 import NavBare from '../components/NavBare.vue';
 import SigninSitter from '../components/sitter/SigninSitter.vue';
 
+
 export default{
 
 
@@ -55,5 +56,6 @@ export default{
     }
     .form_sitter{
         backdrop-filter: blur(20px) grayscale(60%);
+        width: 29rem;
     }
 </style>

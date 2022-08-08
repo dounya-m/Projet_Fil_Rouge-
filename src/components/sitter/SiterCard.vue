@@ -11,8 +11,11 @@
         </div>
         <div class="flex flex-col items-center px-6 mt-16">
             <h1 class="mb-1 text-3xl font-bold text-center">{{a.nom}} {{a.prenom}}</h1>
-            <p class="text-sm text-center text-gray-800">{{a.ville}}</p>
-            <p class="text-sm text-center text-gray-800">{{a.adress}}</p>
+            <p class="text-sm font-semibold text-center text-gray-800 ">{{a.ville}}</p>
+            <!-- <span class="flex gap-0">
+                <img class="w-5" src="../../assets/icones/loc.png" alt=""> -->
+                <p class="text-sm text-center text-gray-800">{{a.adress}}</p>
+            <!-- </span> -->
             <p class="pt-3 text-base font-normal text-center text-gray-600 discription">
                 {{a.description}}
             </p>

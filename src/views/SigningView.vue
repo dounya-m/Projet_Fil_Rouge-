@@ -29,12 +29,10 @@
                 <div class="flex flex-col">
                     <label class="text-left text-indigo-900 " for="firstname">Password</label>
                     <input class="h-1 p-4 border rounded-lg w-72 " type="password" id="myInput" name="password" v-model="password" required>
-                    <input type="checkbox" onclick="myFunction()">Show Password
                 </div>
                 <div class="flex flex-col">
                     <label class="text-left text-indigo-900 " for="firstname">Confirm password</label>
                     <input class="h-1 p-4 border rounded-lg w-72 " type="password" id="myInput" required>
-                    <input type="checkbox" onclick="myFunction()">Show Password
                 </div>
                 <!-- <div class="flex flex-col">
                     <label class="text-left text-indigo-900 " for="firstname">Image</label>

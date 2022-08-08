@@ -1,10 +1,10 @@
 <template>
     <div class="flex">
-    <section>
+    <section class="fixed ">
         <SideBare/>
     </section>
 
-    <section class="flex flex-wrap justify-center gap-4 ml-9 ">
+    <section class="flex flex-wrap justify-center gap-4 ml-9 pl-[14rem] mb-8">
         <AllPostesadmin v-for="post in this.postes" :key="post.id_p" :post="post"/>
     </section>
     </div>

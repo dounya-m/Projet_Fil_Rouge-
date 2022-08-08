@@ -1,6 +1,6 @@
 <template>
     <div class="flex ">
-        <section class="">
+        <section class="sticky ">
             <SideBare/>
         </section>
 

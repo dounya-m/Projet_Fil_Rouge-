@@ -1,16 +1,13 @@
 <template>
     <!-- component -->
 <div class="flex items-center justify-center min-h-screen min-w-screen">
-	<div class="absolute z-0 hidden transform rotate-45 bg-emerald-100 w-60 h-60 rounded-xl -top-5 -left-16 md:block">
-	</div>
-	<div class="absolute hidden w-48 h-48 transform bg-emerald-300 rounded-xl -bottom-6 -right-10 rotate-12 md:block">
-	</div>
+
     <form v-on:submit.prevent="login()">
     <div class="z-20 px-12 py-12 bg-white shadow-xl rounded-2xl">
-		<div>
-			<h1 class="mb-4 text-3xl font-bold text-center cursor-pointer">Create An Account</h1>
-			<p class="mb-8 text-sm font-semibold tracking-wide text-center text-gray-700 cursor-pointer w-80">Create an
-				account to enjoy all the services without any ads for free!</p>
+		<div class="flex flex-col items-center justify-center">
+            <img class="w-28" src="../assets/images/logo.png" alt="">
+			<h1 class="mb-4 text-3xl font-bold text-center cursor-pointer">Admin Space</h1>
+			<p class="mb-8 text-sm font-semibold tracking-wide text-center text-gray-700 cursor-pointer w-80">you can manage your website here</p>
 		</div>
 		<div class="space-y-4">
 			<input type="text" v-model="name" name="name" placeholder="Email Addres" class="block w-full px-4 py-3 text-sm border rounded-lg outline-none" />
@@ -18,14 +15,10 @@
     </div>
 			<div class="mt-6 text-center">
 				<button type="submit" name="submit" class="w-64 py-3 text-xl text-white bg-emerald-300 rounded-2xl">Create Account</button>
-				<p class="mt-4 text-sm">Already Have An Account? <span class="underline cursor-pointer"> Sign In</span>
-				</p>
+
 			</div>
 		</div>
-		<div class="absolute top-0 hidden w-40 h-40 rounded-full bg-emerald-300 right-7 md:block"></div>
-		<div
-			class="absolute hidden w-20 h-40 transform rotate-45 rounded-full bg-emerald-300 bottom-20 left-10 md:block">
-		</div>
+
     </form>
 	</div>
 </template>

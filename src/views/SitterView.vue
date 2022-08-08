@@ -16,10 +16,13 @@
                 and choose who will take care of your pet contact him for more information, 
                 if you are a sitter join our community and create your profile here
             </p>
-            <div class="flex flex-wrap items-center justify-start gap-2">
+            <div  class="flex flex-wrap items-center justify-start gap-2">
                 <router-link to="/allsitter" class="w-32 p-2 text-white bg-yellow-400 rounded-lg">I need sitter</router-link>
-                <router-link to="/form" class="w-32 p-2 text-yellow-400 border-2 border-yellow-400 rounded-lg">I'm sitter </router-link>
+                <router-link  to="/form" class="w-32 p-2 text-yellow-400 border-2 border-yellow-400 rounded-lg">I'm sitter </router-link>
             </div>
+            <!-- <div v-else class="flex flex-wrap items-center justify-start gap-2">
+                <router-link to="/allsitter" class="w-32 p-2 text-white bg-yellow-400 rounded-lg">I need sitter</router-link>
+            </div> -->
         </div>
         
     </section>
@@ -49,7 +52,7 @@ h3{
 }
 .background_heaer{
     height: 100vh;
-    padding: 22rem;
+    padding: 5rem;
     -moz-border-radius-bottomleft: 25rem 75rem;
     border-bottom-left-radius: 25rem 50rem;
     box-shadow: -12px 1px 20px 0px #0000001c;

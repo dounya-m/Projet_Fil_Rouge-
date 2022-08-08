@@ -36,29 +36,45 @@
             </span>
         </router-link>
         
-        <!-- <router-link to="#" class="flex items-center w-full gap-2 px-6 " active-class="active" >
-            <img class="w-8" src="../../assets/icones/lastPost.png" alt="">
-            <span class="flex items-center w-full gap-2 px-6 py-4 text-left text-pink-500 hover:text-pink-400">
-                Last Postes
-            </span>
-        </router-link> -->
-
-
-
         <router-link to="/blog" class="flex items-center w-full gap-2 px-6 " active-class="active">
             <img class="w-8" src="../../assets/icones/blog.png" alt="">
             <span class="flex items-center w-full gap-2 px-6 py-4 text-left text-purple-600 hover:text-violet-500">
                     Blog
             </span>
         </router-link> 
-        
+    </section>
+    <section>
+        <button  @click="logout()" class="flex items-center gap-2 ml-6">
+            <img class="w-10" src="../../assets/icones/logout.png" alt="">
+            <span>Logout</span>
+        </button>
     </section>
     </div>
 </template>
 
 <script>
 export default{
-    name: 'SideBare'
+    name: 'SideBare',
+    data(){
+        return{
+            adminLogin: localStorage.getItem('admin_id') ?true : false,
+        }
+    },
+    beforecreated() {
+        this.adminLogin = localStorage.getItem('admin_id') ? true : false
+        },
+         methods:{
+    logout(){
+            console.log("hello")
+            localStorage.removeItem('admin_id')
+        
+                        console.log(typeof localStorage['admin_id']);
+                        if(!localStorage['admin_id']){
+                        this.ifLogin=false;
+            }
+            this.$router.push('/')
+        },
+    }
 }
 
 </script>
